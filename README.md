@@ -40,7 +40,7 @@ Antes de configurar a nuvem ou o site, você precisa criar o arquivo de transaç
 
 Você precisa ter o [Python](https://www.python.org/downloads/) instalado.
 
-#### 2. Instalar bibliotecas geradoras
+#### 2. Instalar bibliotecas 
 
 Abra seu terminal na pasta raiz do projeto e instale as ferramentas de dados:
 
