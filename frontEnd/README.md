@@ -80,7 +80,7 @@ O objetivo deste projeto é criar uma interface **front-end** interativa utiliza
 
 Vamos subir o site para a nuvem.
 
-#### 1. Comando de Criação e Upload** Substitua o `--name AgenteFinanceiroR-Frontend` se desejar mudar:
+#### 1. Comando de Criação e Upload. Substitua o `--name AgenteFinanceiroR-Frontend` se desejar mudar:
 
 ````bash
     az webapp up --name AgenteFinanceiroR-Frontend --resource-group [INSIRA SEU RESOURCE GROUP AQUI] --location swedencentral --sku B1 --os-type Linux --runtime "PYTHON:3.11"
@@ -105,9 +105,9 @@ O **Streamlit** precisa de configurações específicas que não vêm ativadas p
 ````bash
     az webapp identity assign --name AgenteFinanceiroR-Frontend --resource-group [SEU RESOURCE GROUP AQUI]
 ````
-***⚠️ Importante:** Copie o código `principalId` que aparecerá na saída deste comando.
+***⚠️ Importante:** Copie o código `principalid` que aparecerá na saída deste comando.
 
-[Veja imagem: Exemplo principalId](img/principalId.png)
+[Veja imagem: Exemplo principalid](img/principalId.png)
 
 ### 🔐 Parte 5: Permissões de Acesso (IAM)
 
@@ -115,8 +115,7 @@ Agora autorizamos o site a falar com o cérebro de IA.
 
 #### Opção Via Terminal (Recomendado): Substitua `COLE_SEU_PRINCIPAL_ID_AQUI` pelo ID copiado no passo anterior.
 
-````
-Bash
+````bash
     az role assignment create --assignee "COLE_SEU_PRINCIPAL_ID_AQUI" --role "Azure AI Developer" --resource-group "SEU RESOURCE GROUP"
 ````
 *(Alternativa Visual: No Portal Azure > Grupo de Recursos > IAM > Adicionar atribuição de função > Selecionar "Azure AI Developer" > Membros: Identidade Gerenciada > App Service > Seu App).*
@@ -129,20 +128,19 @@ Bash
 
 ### 🚀 Parte 6: Reiniciar e Acessar
 
-A permissão de segurança pode levar até 5 minutos para propagar.
+A permissão de segurança pode levar até 5 minutos.
 
 #### 1. Aguarde uns minutos.
 
-#### 2. Reinicie o App:**
+#### 2. Reinicie o App:
 
-Substitua `AgenteFinanceiroR-Frontend`pelo nome do seu website e `AgenteFinanceiroR`por seu resource name.
+Substitua `AgenteFinanceiroR-Frontend`pelo nome do seu website e `AgenteFinanceiroR` por seu resource name.
 
 ````bash
     az webapp restart --name AgenteFinanceiroR-Frontend --resource-group AgenteFinanceiroR
 ````
 
-#### 3. Acesse o link final:
-https://agentefinanceiror-frontend.azurewebsites.net
+#### 3. Acesse o link final (ex: https://agentefinanceiror-frontend.azurewebsites.net)
 
 [Veja imagem: Site no ar](img/site-rodando.png)
 
@@ -165,11 +163,11 @@ O link sempre segue o formato do nome que você escolheu na criação:
 
 [Veja imagem: Domain Link](img/find-link.png)
 
-#### 3. Pelo Terminal (Comando)**
+#### 3. Pelo Terminal (Comando)
 Se estiver com o terminal aberto, rode este comando para o Azure te mostrar o link:
 
 ```bash
-az webapp show --name AgenteFinanceiroR-Frontend --resource-group AgenteFinanceiroR --query defaultHostName --output tsv
+    az webapp show --name AgenteFinanceiroR-Frontend --resource-group AgenteFinanceiroR --query defaultHostName --output tsv
 ```
 
 ### ❌ Solução de Problemas Comuns
@@ -198,4 +196,4 @@ Abaixo estão os links da documentação da Microsoft utilizados para construir 
 
 * **Azure AI Foundry (Inteligência):**
     * [Construindo apps de chat com o SDK do Azure AI](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/develop/sdk-overview)
-    * [Controle de Acesso (RBAC) no Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/rbac-ai-studio) (Explica as permissões como "Azure AI Developer").
+    * [Controle de Acesso (RBAC) no Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/rbac-ai-studio) (Explica as permissões como "Azure AI Developer")
