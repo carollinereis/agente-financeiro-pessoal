@@ -57,7 +57,9 @@ Execute o script de geração (certifique-se de ter o arquivo `generate_data.py`
 ```
 ✅ **Resultado:** Um arquivo chamado `mock_transactions.csv` será criado. Você usará este arquivo para alimentar a "memória" do seu Agente no Azure.
 
-#### 🛠️ Tecnologias Utilizadas
+---
+
+### 🛠️ Tecnologias Utilizadas
 
 * **Cloud:** Microsoft Azure
 

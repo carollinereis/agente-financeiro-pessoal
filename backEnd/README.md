@@ -22,13 +22,13 @@ O primeiro passo é criar nossos dados fictícios.
 2.  Abra seu terminal e instale as dependências:
 
     ```bash
-    pip install pandas faker
+       pip install pandas faker
     ```
 
 3.  Execute o script para gerar o seu arquivo de transações:
 
     ```bash
-    python generate_data.py
+       python generate_data.py
     ```
 
 4.  **Resultado:** Um novo arquivo, `mock_transactions.csv`, será criado. Este é o nosso "extrato bancário".
